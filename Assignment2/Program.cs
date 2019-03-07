@@ -1,28 +1,28 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-// name:Mandeep Kaur(730387)
-// name:
 namespace DelegateAndEvents
 {
+    //name: Mandeep kaur(730387)
+    //name: amandeep kaur(730499)
+
     public class DelegateExercises
     {
-        public delegate void MyDelegate();
-        void Method1()
-        {
-            Console.WriteLine("Method1");
-            Console.ReadLine();
-        }
+        public delegate int MyDelegate(int intValue);
 
-        public void Method2()
+        public int Method1(int intMethod1)
+        {
+            return intMethod1 * 2;
+        }
+        public int Method2(int intMethod2)
+        {
+            return intMethod2 * 10;
+        }
+        public void Method3()
         {
             MyDelegate myDelegate = new MyDelegate(Method1);
-            myDelegate();
+            int result1 = myDelegate(10);
+            System.Console.WriteLine(result1);
+            myDelegate = new MyDelegate(Method2);
+            int result2 = myDelegate(10);
+            System.Console.WriteLine(result2);
         }
-
-
     }
-}
