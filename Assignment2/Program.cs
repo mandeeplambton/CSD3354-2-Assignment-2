@@ -1,32 +1,38 @@
-﻿using System;
-namespace DelegateAndEvents
+﻿public class Program
 {
-    //name: Mandeep kaur(730387)
-    //name: amandeep kaur(730499)
-
-    public class Program
+    public static void Main()
     {
-        public static void Main()
-        {
-            DelegateExercises delegateExercises = new DelegateExercises();
-            delegateExercises.Method3();
-        }
+        DelegateExercises delegateExercises = new DelegateExercises();
+        delegateExercises.Method3();
+        System.Console.ReadLine();
+    }
+}
+
+public class DelegateExercises
+{
+    public delegate int MyDelegate(int intValue);
+
+    int Method1(int intMethod1)
+    {
+        return intMethod1 * 2;
     }
 
-    public class DelegateExercises
+    int Method2(int intMethod1)
     {
-        public delegate int MyDelegate();
+        return intMethod1 * 10;
+    }
 
-        void Method1()
-        {
-            System.Console.WriteLine("MyDelegate");
-        }
-        public void Method3()
-        {
-            MyDelegate myDelegate = new MyDelegate(Method1);
-          
-            myDelegate();
-        }
+    public void Method4(MyDelegate myDelegate)
+    {
+        int result = myDelegate(10);
+        System.Console.WriteLine(result);
+    }
 
+    public void Method3()
+    {
+        MyDelegate myDelegate = new MyDelegate(Method1);
+        Method4(myDelegate);
+        myDelegate = new MyDelegate(Method2);
+        Method4(myDelegate);
     }
 }
