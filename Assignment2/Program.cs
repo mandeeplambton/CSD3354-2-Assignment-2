@@ -1,10 +1,13 @@
-﻿public class Program
+﻿using System;
+//name:Mandeep Kaur(730387)
+//name: Amandeep Kaur(730499)
+public class Program
 {
     public static void Main()
     {
         DelegateExercises delegateExercises = new DelegateExercises();
         delegateExercises.Method3();
-        System.Console.ReadLine();
+        Console.ReadLine();
     }
 }
 
@@ -14,18 +17,18 @@ public class DelegateExercises
 
     int Method1(int intMethod1)
     {
-        return intMethod1 * 2;
+        return intMethod1 * 4;
     }
 
     int Method2(int intMethod1)
     {
-        return intMethod1 * 10;
+        return intMethod1 * 20;
     }
 
     public void Method4(MyDelegate myDelegate)
     {
-        int result = myDelegate(10);
-        System.Console.WriteLine(result);
+        for (int i = 1; i <= 5; i++)
+            System.Console.Write(myDelegate(i) + " ");
     }
 
     public void Method3()
